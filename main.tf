@@ -43,7 +43,7 @@ resource "aws_security_group" "web_sg" {
 
 # EC2 instance 1
 resource "aws_instance" "web1" {
-  ami                         = ami-0062e0576ebcaa2a9
+  ami                         = "ami-0062e0576ebcaa2a9"
   instance_type               = "t2.micro"
   subnet_id                   = data.aws_subnets.default.ids[0]
   vpc_security_group_ids      = [aws_security_group.web_sg.id]
@@ -64,7 +64,7 @@ resource "aws_instance" "web1" {
 
 # EC2 instance 2
 resource "aws_instance" "web2" {
-  ami                         = ami-0062e0576ebcaa2a9
+  ami                         = "ami-0062e0576ebcaa2a9"
   instance_type               = "t2.micro"
   subnet_id                   = data.aws_subnets.default.ids[1]
   vpc_security_group_ids      = [aws_security_group.web_sg.id]
